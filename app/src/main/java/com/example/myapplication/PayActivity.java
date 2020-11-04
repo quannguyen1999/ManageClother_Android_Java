@@ -22,7 +22,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PayActivity extends AppCompatActivity{
+public class PayActivity extends AppCompatActivity implements  CLickPayActivity{
     //adapter
     private ListOrderAdapter listOrderAdapter;
 
@@ -87,7 +87,7 @@ public class PayActivity extends AppCompatActivity{
         for (Products products : listProduct) {
             System.out.println(products);
         }
-        listOrderAdapter = new ListOrderAdapter(this, listProduct);
+        listOrderAdapter = new ListOrderAdapter(this, listProduct, this);
 
         rclView.setAdapter(listOrderAdapter);
 
@@ -109,5 +109,10 @@ public class PayActivity extends AppCompatActivity{
         txtTotal = findViewById(R.id.txtTotal);
 
         rclView = findViewById(R.id.rclView);
+    }
+
+    @Override
+    public void onCLickItemTable(ArrayList<Products> products) {
+        initData(products);
     }
 }

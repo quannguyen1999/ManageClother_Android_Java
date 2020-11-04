@@ -12,8 +12,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.ClickItemInterface;
-import com.example.myapplication.MainActivity;
-import com.example.myapplication.PayActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.models.Products;
 
@@ -36,9 +34,6 @@ public class ListProductAdapter extends  RecyclerView.Adapter<ListProductAdapter
         this.listProduct = listProduct;
         this.clickItemInterface = clickItemInterface;
     }
-
-
-
 
     @NonNull
     @Override
